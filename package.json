@@ -1,0 +1,83 @@
+{
+  "name": "metaflowamnarchive",
+  "displayName": "metaflowamnarchive",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./dist/extension.js",
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "concurrently \"tsc -p ./tsconfig.extension.json --skipLibCheck\" \"vite build\" ",
+    "watch": "concurrently \"tsc -w -p ./tsconfig.extension.json --skipLibCheck\" \"vite build --watch\" ",
+    "typecheck": "vue-tsc --noEmit --skipLibCheck",
+    "test": "vitest",
+    "test:ui": "vitest --ui"
+  },
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "amn-base-view",
+          "title": "Metaflow AMN Archive",
+          "icon": "src/assets/img/default.svg"
+        }
+      ]
+    },
+    "views": {
+      "amn-base-view": [
+        {
+          "type": "webview",
+          "id": "base-view-sidebar",
+          "name": "Metaflow AMN Archive",
+          "icon": "src/assets/img/default.svg",
+          "contextualTitle": "Metaflow AMN Archive"
+        }
+      ]
+    }
+  },
+  "dependencies": {
+    "@intlify/unplugin-vue-i18n": "^0.8.1",
+    "@vitest/ui": "^0.26.2",
+    "axios": "^1.5.1",
+    "vue": "^3.2.45",
+    "vue-i18n": "9",
+    "vuetify": "^3.3.21",
+    "roboto-fontface": "*",
+    "@mdi/font": "7.0.96",
+    "core-js": "^3.29.0",
+    "pinia": "^2.0.0",
+    "vue-router": "^4.0.0"
+  },
+  "devDependencies": {
+    "@iconify-json/mdi": "^1.1.39",
+    "@rollup/plugin-commonjs": "^25.0.5",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/user-event": "^14.4.3",
+    "@testing-library/vue": "^6.6.1",
+    "@types/jest": "^29.2.4",
+    "@types/node": "^18.11.17",
+    "@types/vscode": "^1.73.0",
+    "@typescript-eslint/eslint-plugin": "^5.42.0",
+    "@typescript-eslint/parser": "^5.42.0",
+    "@vitejs/plugin-vue": "^2.3.3",
+    "concurrently": "^7.6.0",
+    "eslint-plugin-vue": "^9.8.0",
+    "jsdom": "^20.0.3",
+    "typescript": "^4.8.4",
+    "unplugin-icons": "^0.14.15",
+    "vite": "^2.9.14",
+    "vitest": "^0.26.2",
+    "vite-plugin-vuetify": "^1.0.0",
+    "vue-tsc": "^0.40.6",
+    "@babel/types": "^7.21.4",
+    "@vue/eslint-config-typescript": "^11.0.0",
+    "eslint": "^8.37.0",
+    "sass": "^1.60.0",
+    "unplugin-fonts": "^1.0.3"
+  }
+}
